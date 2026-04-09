@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="mobileViewport" class="app mobile-viewport">
+    <section id="gameContent" class="panel">
+      <section class="top-section">
+        <header class="top-bar">
+          <h1 class="title">Minesweeper</h1>
+          <div class="actions">
+            <button id="focus-mode-btn" class="focus-mode-btn" type="button">Focus Off</button>
+            <button id="flag-mode-btn" class="flag-btn" type="button">Flag Off</button>
+            <button id="pause-btn" class="pause-btn" type="button">Pause</button>
+            <button id="reset-btn" class="reset-btn" type="button">Reset</button>
+          </div>
+        </header>
+
+        <section class="difficulty-row" aria-label="Difficulty selection">
+          <label class="difficulty-label" for="difficulty-select">Difficulty</label>
+          <select id="difficulty-select" class="difficulty-select">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </section>
+
+        <section class="status-bar" aria-label="Game status">
+          <div class="status-card">
+            <span class="status-label">Mines</span>
+            <span id="mine-count" class="status-value">10</span>
+          </div>
+          <div class="status-card">
+            <span class="status-label">Time</span>
+            <span id="timer" class="status-value">0</span>
+          </div>
+          <button id="reset-compact-btn" class="reset-compact-btn" type="button">Reset</button>
+        </section>
+
+        <p id="message" class="message" role="status" aria-live="polite" aria-atomic="true">Good luck!</p>
+      </section>
+
+      <section id="board-fit" class="board-fit play-area">
+        <div id="board-zoom-controls" class="board-zoom-controls" aria-label="Board zoom controls" hidden>
+          <button id="zoom-in-btn" type="button" aria-label="Zoom in">+</button>
+          <button id="zoom-reset-btn" type="button" aria-label="Reset zoom">Reset</button>
+          <button id="zoom-out-btn" type="button" aria-label="Zoom out">-</button>
+        </div>
+        <section id="board-frame" class="board-frame">
+          <div id="board-viewport" class="board-viewport">
+            <div id="pz-stage" class="pz-stage">
+              <section id="board-content" class="game-content">
+                <div id="board" class="board" role="grid" aria-label="Minesweeper board"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
